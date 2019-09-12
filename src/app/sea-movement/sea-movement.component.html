@@ -1,0 +1,26 @@
+
+
+<ng-container   *ngFor="let sea_shipment of shipment.sea_shipments">
+  <ng-container  *ngFor="let sea_movement of sea_shipment.sea_movements">
+      <div class="swiper-slide">
+          <div class="timestamp">
+            <span class="date">Pick-up location <h4>{{sea_movement.vessel_telo_loading.location.name}}</h4></span>
+            <!-- same goes for the rest of pick-up data  -->
+          </div>
+          <div class="status">
+            <span><i class="fa fa-play"></i> {{sea_movement.vessel_telo_loading.readings[0].type}} {{sea_movement.vessel_telo_loading.readings[0].reading}}</span>
+            <!-- same goes for the rest of data  -->
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="timestamp">
+              <span class="date">Drop-off location <h4>{{sea_movement.vessel_telo_discharge.location.name}}</h4></span>
+              <!-- the rest of Drop-off info is here  -->
+            </div>
+            <div class="status">
+              <span><i class="fa fa-stop"></i> {{sea_movement.vessel_telo_discharge.readings[0].type}} {{sea_movement.vessel_telo_discharge.readings[0].reading}}</span>
+              <!-- the rest of Drop-off info is here  -->
+            </div>
+        </div>
+    </ng-container>
+    </ng-container>

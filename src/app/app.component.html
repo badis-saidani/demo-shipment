@@ -1,4 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <section class="panel primary">
   <header class="panel-heading bg-primary">
     <h3>Dockflow - Demo shipment</h3>
@@ -11,35 +10,8 @@
 
           <div class="swiper-container">
 
-            <div class="swiper-wrapper timeline">
-                <ng-container   *ngFor="let sea_shipment of shipment.sea_shipments">
-                  <ng-container   *ngFor="let sea_movment of sea_shipment.sea_movements">
-                    <div class="swiper-slide">
-                          <div class="timestamp">
-                            <span class="date">Pick-up location <h4>{{sea_movment.vessel_telo_loading.location.name}}</h4></span>
-                            <!-- same goes for the rest of pick-up data  -->
-                          </div>
-                          <div class="status">
-                            <span><i class="fa fa-play"></i> {{sea_movment.vessel_telo_loading.readings[0].type}} {{sea_movment.vessel_telo_loading.readings[0].reading}}</span>
-                            <!-- same goes for the rest of data  -->
-                          </div>
-                      </div>
-                      <div class="swiper-slide">
-                          <div class="timestamp">
-                              <span class="date">Drop-off location <h4>{{sea_movment.vessel_telo_discharge.location.name}}</h4></span>
-                              <!-- the rest of Drop-off info is here  -->
-                            </div>
-                            <div class="status">
-                              <span><i class="fa fa-stop"></i> {{sea_movment.vessel_telo_discharge.readings[0].type}} {{sea_movment.vessel_telo_discharge.readings[0].reading}}</span>
-                              <!-- the rest of Drop-off info is here  -->
-                            </div>
-                        </div>
+              <app-sea-movement  class="swiper-wrapper timeline" [shipment] = 'shipment'></app-sea-movement>
 
-                      </ng-container>
-                  </ng-container>
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
